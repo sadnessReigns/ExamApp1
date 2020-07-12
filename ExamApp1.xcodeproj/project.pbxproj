@@ -14,8 +14,8 @@
 		945EA2B424B9B6DC00959387 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945EA2B324B9B6DC00959387 /* Main.storyboard */; };
 		945EA2B824B9B7BA00959387 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945EA2B724B9B7BA00959387 /* TableViewController.swift */; };
 		945EA2BA24B9B7CA00959387 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945EA2B924B9B7CA00959387 /* CollectionViewController.swift */; };
+		94980A5A24BB5E010082A0CF /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94980A5924BB5E010082A0CF /* ModelController.swift */; };
 		94BF947324BA02B7007A825F /* PersonInfoPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF947224BA02B7007A825F /* PersonInfoPopUpViewController.swift */; };
-		94BF947524BA067C007A825F /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BF947424BA067C007A825F /* GlobalVariables.swift */; };
 		94D6440324BB00C900CB6148 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6440224BB00C800CB6148 /* MyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +29,8 @@
 		945EA2B324B9B6DC00959387 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		945EA2B724B9B7BA00959387 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		945EA2B924B9B7CA00959387 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		94980A5924BB5E010082A0CF /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		94BF947224BA02B7007A825F /* PersonInfoPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoPopUpViewController.swift; sourceTree = "<group>"; };
-		94BF947424BA067C007A825F /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		94D6440224BB00C800CB6148 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +48,6 @@
 		945EA29324B9B57E00959387 = {
 			isa = PBXGroup;
 			children = (
-				94BF947424BA067C007A825F /* GlobalVariables.swift */,
 				945EA29E24B9B57E00959387 /* ExamApp1 */,
 				945EA29D24B9B57E00959387 /* Products */,
 			);
@@ -65,6 +64,7 @@
 		945EA29E24B9B57E00959387 /* ExamApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				94980A5924BB5E010082A0CF /* ModelController.swift */,
 				945EA2BB24B9B7D700959387 /* TableViewController Group */,
 				94C6816D24BA152400211BBB /* CollectionViewController Group */,
 				945EA29F24B9B57E00959387 /* AppDelegate.swift */,
@@ -166,11 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94BF947524BA067C007A825F /* GlobalVariables.swift in Sources */,
 				94D6440324BB00C900CB6148 /* MyCollectionViewCell.swift in Sources */,
 				945EA2BA24B9B7CA00959387 /* CollectionViewController.swift in Sources */,
 				945EA2A024B9B57E00959387 /* AppDelegate.swift in Sources */,
 				945EA2B824B9B7BA00959387 /* TableViewController.swift in Sources */,
+				94980A5A24BB5E010082A0CF /* ModelController.swift in Sources */,
 				945EA2A224B9B57E00959387 /* SceneDelegate.swift in Sources */,
 				94BF947324BA02B7007A825F /* PersonInfoPopUpViewController.swift in Sources */,
 			);
@@ -318,7 +318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.takeover.ExamApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -336,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.takeover.ExamApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

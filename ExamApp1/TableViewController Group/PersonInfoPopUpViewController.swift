@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 
 class PersonInfoPopUpViewController: UIViewController {
-    // Data
+    var urlSession: URLSession!
+    
+    let mc = (UIApplication.shared.delegate as! AppDelegate).modelController
+    
+    
+    var currentPerson: Person!
     var ageLabel: UILabel = UILabel()
     var firstNameLabel: UILabel = UILabel()
     var lastNameLabel: UILabel = UILabel()
@@ -22,7 +27,11 @@ class PersonInfoPopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.backBarButtonItem = nil
+        
+        
+        self.currentPerson = mc.currentPerson
+        giveLabelsText()
+        
         makeLabelsLookGood([footerLabel, ageLabel, firstNameLabel, lastNameLabel, emailLabel, genderLabel, ipAddressLabel])
         
         setUpSubViews()
@@ -30,12 +39,12 @@ class PersonInfoPopUpViewController: UIViewController {
         
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        giveLabelsText()
-        setUpSubViews()
-        
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        urlSession = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: OperationQueue.main)
     }
+    
+    
     
     private func setUpSubViews() {
         
@@ -105,29 +114,14 @@ class PersonInfoPopUpViewController: UIViewController {
         ipAddressLabel.isHidden = false
         
         footerLabel.text = "FULL INFO"
-        if malesOnly.count > 0 {
-            ageLabel.text = "Age: \(malesOnly[currentIndexPathRow].age)"
-            firstNameLabel.text = malesOnly[currentIndexPathRow].firstName
-            lastNameLabel.text = malesOnly[currentIndexPathRow].lastName
-            emailLabel.text = malesOnly[currentIndexPathRow].email
-            genderLabel.text = malesOnly[currentIndexPathRow].gender
-            ipAddressLabel.text = "IP Address: \(malesOnly[currentIndexPathRow].ipAddress)"}
-        else if femalesOnly.count > 0 {
-            ageLabel.text = "Age: \(femalesOnly[currentIndexPathRow].age)"
-            firstNameLabel.text = femalesOnly[currentIndexPathRow].firstName
-            lastNameLabel.text = femalesOnly[currentIndexPathRow].lastName
-            emailLabel.text = femalesOnly[currentIndexPathRow].email
-            genderLabel.text = femalesOnly[currentIndexPathRow].gender
-            ipAddressLabel.text = "IP Address: \(femalesOnly[currentIndexPathRow].ipAddress)"
-        }
-        else {
-        ageLabel.text = "Age: \(persons[currentIndexPathRow].age)"
-        firstNameLabel.text = persons[currentIndexPathRow].firstName
-        lastNameLabel.text = persons[currentIndexPathRow].lastName
-        emailLabel.text = persons[currentIndexPathRow].email
-        genderLabel.text = persons[currentIndexPathRow].gender
-        ipAddressLabel.text = "IP Address: \(persons[currentIndexPathRow].ipAddress)"
-        }
+        
+        ageLabel.text = "Age: \(currentPerson.age)"
+        firstNameLabel.text = currentPerson.firstName
+        lastNameLabel.text = currentPerson.lastName
+        emailLabel.text = currentPerson.email
+        genderLabel.text = currentPerson.gender
+        ipAddressLabel.text = "IP Address: \(currentPerson.ipAddress)"
+        
         
     }
     
